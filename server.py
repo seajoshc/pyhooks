@@ -1,5 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import BytesIO
+import json
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -17,7 +18,9 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         response = BytesIO()
         response.write(body)
         self.wfile.write(response.getvalue())
-        print(body)
+
+        component = json.loads(body)
+        print(component)
 
 
 httpd = HTTPServer(('0.0.0.0', 8000), SimpleHTTPRequestHandler)

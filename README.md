@@ -1,2 +1,7 @@
-# flask-webhook-example
- Example Python Flask app for locally testing the Compass templates webhook feature
+# pyhooks
+
+Webhook listener written in Python.
+
+## server.py
+
+Standard library only.
